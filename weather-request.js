@@ -7,7 +7,7 @@ const getWeather = async (city) => {
 
   try {
     const res = await http.get(url);
-    // console.log(res);
+    // console.log('Hello', res);
     return {
       state: 'success',
       weatherInfo: res,
@@ -22,5 +22,5 @@ const getWeather = async (city) => {
 // console.log(getWeather('Goa'));
 
 getWeather('Goa')
-  .then((data) => console.log(data))
+  .then((data) => console.log('DATA', data))
   .catch((err) => console.log(err));

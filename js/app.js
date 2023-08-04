@@ -51,6 +51,7 @@ async function fetchWeatherFromCity(e) {
   }
 
   const weatherResponse = await getWeather(cityName);
+  // console.log('Weather Responase', weatherResponse.weatherInfo);
 
   if (weatherResponse.state === 'success') {
     render(weatherResponse.weatherInfo);
@@ -72,6 +73,7 @@ function render(weatherInfo) {
   citynameLabel.innerHTML = apiCityName;
 
   const keyTime = new Date(weatherDataArray[0].dt_txt).getHours();
+  // console.log(keyTime);
   const filterWeatherData = filterWeatherDataByHour(weatherDataArray, keyTime);
 
   processFilteredData(filterWeatherData);
